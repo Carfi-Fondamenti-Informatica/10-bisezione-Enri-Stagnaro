@@ -1,21 +1,22 @@
 #include <iostream>
-#include "math.h"
 using namespace std;
+#include "math.h"
 
 float f(float y){
 float risultato;
-risultato = pow(y,2)*cos(y)+1;
+risultato = pow(y, 2)*cos(y)+1;
 return risultato;
 }
 
 int main(){
-float a,b;
+float a, b;
+
 do{
 cout << "inserire estremi" << endl;
 cin >> a >> b;
-}
-while(f(a)*f(b)>=0);
-float x,err;
+}while(f(a)*f(b)>=0);
+float x, err;
+
 do{
 x=(a+b)/2;
 if(f(x)==0){
@@ -28,7 +29,7 @@ b=x;
 }else{
 a=x;
 }
-err=abs((b-a)/2;
+err=abs((b-a)/2);
 }
 }
 while(err>=1e-6);
